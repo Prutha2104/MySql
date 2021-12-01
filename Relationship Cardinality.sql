@@ -8,7 +8,7 @@ CREATE TABLE `Course`(
     `Fee` NUMERIC(10, 2) NOT NULL
 ); 
  
-CREATE TABLE `Student`(
+CREATE TABLE `Student1`(
     `StudentID` INT PRIMARY KEY AUTO_INCREMENT,
     `FirstName` VARCHAR(50) NOT NULL,
     `LastName`  VARCHAR(50) NOT NULL
@@ -21,7 +21,7 @@ CREATE TABLE `CourseEnrollments`(
     `CourseID` INT NOT NULL ,
     `StudentID` INT NOT NULL,
      CONSTRAINT fk_courseid FOREIGN KEY(`CourseID`) REFERENCES `Course`(`CourseID`),
-     CONSTRAINT fk_studentid FOREIGN KEY(`StudentID`) REFERENCES `Student`(`StudentID`)
+     CONSTRAINT fk_studentid FOREIGN KEY(`StudentID`) REFERENCES `Student1`(`StudentID`)
 );
  
 -- Sample insertions
@@ -32,10 +32,10 @@ VALUES('SQL',30);
 INSERT INTO `Course`(`Name`,`Fee`)
 VALUES('DS', 40);
  
-INSERT INTO `Student`(`FirstName`,`LastName`)
+INSERT INTO `Student1`(`FirstName`,`LastName`)
 VALUES('a','a');
  
-INSERT INTO `Student`(`FirstName`,`LastName`)
+INSERT INTO `Student1`(`FirstName`,`LastName`)
 VALUES('b','b');
  
  
@@ -50,12 +50,12 @@ VALUES(2,1);
  
 -- Query
  
-SELECT * FROM `Student`;
+SELECT * FROM `Student1`;
 SELECT * FROM `Course`;
 SELECT * FROM `CourseEnrollments`;
  
 -- Drop CourseEnrollments before dropping Course and Student. 
  
-DROP TABLE `CourseEnrollments`;
-DROP TABLE `Course`;
-DROP TABLE `Student`;
+-- DROP TABLE `CourseEnrollments`;
+-- DROP TABLE `Course`;
+-- DROP TABLE `Student1`;
