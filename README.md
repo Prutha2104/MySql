@@ -1,3 +1,3 @@
 # MySql
 
-A BAsic start to MySql and database design
+A Easy start to MySql commands and database design. Learn through quick and easy steps.
